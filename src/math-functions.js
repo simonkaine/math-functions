@@ -133,7 +133,12 @@ This function should be dynamic, accepting an array of any length.
 */
 
 export function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    const firstTwoNums = multiply(dynamicArray[0], dynamicArray[1])[0];
+    const thirdAndFourthNums = multiply(dynamicArray[2], dynamicArray[3])[0];
+    const fourNumsTotal = multiply(thirdAndFourthNums, firstTwoNums)[0];
+    const finalNum = multiply(fourNumsTotal, dynamicArray[4])[0];
 
+    return [finalNum, `The numbers ${dynamicArray[0]},${dynamicArray[1]},${dynamicArray[2]},${dynamicArray[3]},${dynamicArray[4]} have a product of ${finalNum}.`];
 }
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
